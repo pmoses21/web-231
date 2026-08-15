@@ -8,10 +8,10 @@
 
       Tinley Xeriscapes
       Plants web page
-      Author: 
-      Date:   
+      Author: Pat Moses
+      Date: 08/12/26
 
-      Filename: js01.html
+      Filename: js01_txt.html
    -->
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -40,23 +40,40 @@
             <li><a href="#">Get An Estimate</a></li>
          </ul>
       </nav>
-        
+
       <aside>
          <ul>
-            <li id="blanket">Blanket Flower</li>
-            <li id="rugosa">Hedge Rose</li>
-            <li id="bluestem">Little Bluestem</li>
+            <li id="blanket" onclick="document.getElementById('plantImg').src = blanket">Blanket Flower</li>
+            <li id="rugosa" onclick="document.getElementById('plantImg').src = rugosa">Hedge Rose</li>
+            <li id="bluestem" onclick="document.getElementById('plantImg').src = bluestem">Little Bluestem</li>
          </ul>
       </aside>
-    
-      <article>   
+
+      <article>
          <figure>
-            <img src="#" alt="" title="" id="plantImg" />         
-            <figcaption id="imgCaption">            
+            <img src="#" alt="" title="" id="plantImg" />
+            <figcaption id="imgCaption">
+              <script>
+                /*
+                Information on available plants
+                including link to USDA website
+                */
+
+                document.write("<p>Plant Choices for ");
+                document.write("<a href='http://planthardiness.ars.usda.gov'>");
+                document.write("hardiness zones</a>");
+                document.write(" 5a - 6b </p>"); // Hardiness zones for Chicago and surrounding areas
+
+                //define variables caontaining plant file names
+                let blanket = "blanket.jpg"
+                let bluestem = "bluestem.jpg"
+                let rugosa = "rugosa.jpg"
+
+              </script>
             </figcaption>
-         </figure>       
+         </figure>
       </article>
-    
+
       <footer>
          <p>Tinley Xeriscapes &bull; Tinley Park, IL 60477</p>
       </footer>
