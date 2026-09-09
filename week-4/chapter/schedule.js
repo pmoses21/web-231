@@ -4,8 +4,8 @@
 
       Tipton Turbines
       Baseball Schedule Data
-      Author: 
-      Date:   
+      Author: Pat M
+      Date:09/2/26
 
       Filename: schedule.js
 */
@@ -38,9 +38,8 @@ let runsAllowed =   [1, 2, 0, 5, 3, 3, 1, 5, 3, 1, 3, 6, 7, 4, 6, 3, 2, 4, 1, 0,
 let gameInnings =   [9, 9, 9, 6, 9, 9, 12, 7, 9, 9, 9, 11, 9, 4.5, 9, 9, 9, 9, 9, 0, 2, 9, 10];
 
 // game outcome: W (win), L (lose), S (suspended prior to completion), P (postponed to later date)
-let gameResults =    ["W", "W", "W", "L", "L", "L", "W", "L", "W", "W", "W", "W", "L", "S", 
+let gameResults =    ["W", "W", "W", "L", "L", "L", "W", "L", "W", "W", "W", "W", "L", "S",
                       "L", "L", "W", "W", "W", "P", "S", "W", "L"];
-                      
-                      
-                      
-                      
+
+
+
