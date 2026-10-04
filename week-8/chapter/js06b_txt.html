@@ -6,8 +6,8 @@
       Chapter 6
       Chapter Case
 
-      Author: 
-      Date:   
+      Author: Pat M
+      Date:  10/3/26
 
       Filename: js06b.html
    -->
@@ -15,6 +15,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Chapter 6 Case Problem: Payment Form</title>
    <link rel="stylesheet" href="stylesb.css" />
+   <script src="js06b_txt.js" defer></script>
 </head>
 
 <body>
@@ -22,18 +23,18 @@
       <img src="logo.png" alt="Coctura" />
    </header>
 
-   <section id="orderSection">       
+   <section id="orderSection">
      <table id="orderTable">
         <caption>Your Order</caption>
         <tr>
            <td>8-Quart ($159.95)</td>
-           <td>Qty: 6</td>                 
+           <td>Qty: 6</td>
            <td class="rightA">$959.70</td>
         </tr>
         <tr>
            <td colspan="2">1-year protection plan ($11.95)</td>
            <td class="rightA">$71.70</td>
-        </tr>        
+        </tr>
         <tr>
            <td colspan="2" class="rightA">Subtotal</td>
            <td class="rightA">$1,031.40</td>
@@ -48,39 +49,39 @@
            <td colspan="2" class="rightA">TOTAL</td>
            <td class="rightA">$1,082.97</td>
         </tr>
-     </table>     
+     </table>
 </section>
-   
+
    <section id="paySection">
       <h1>Payment Form</h1>
-      
 
-      <form id="payment" name="payment" method="post" action="paysubmit.html">         
+
+      <form id="payment" name="payment" method="post" action="paysubmit.html">
          <fieldset id="creditcard">
             <legend>Credit Information</legend>
 
             <label for="cardName">Name*</label>
-            <input name="cardName" id="cardName" required type="text" />              
+            <input name="cardName" id="cardName" required type="text" />
 
             <label>Credit Card*</label>
             <fieldset id="cards">
                <label class="cardLabel">
-                  <input name="credit" value="amex" type="radio" required />               
+                  <input name="credit" value="amex" type="radio" required />
                   <span>American Express</span>
                </label>
-               <label class="cardLabel">               
+               <label class="cardLabel">
                   <input name="credit" value="discover" type="radio" />
                   <span>Discover</span>
                </label>
-               <label class="cardLabel">                              
+               <label class="cardLabel">
                   <input name="credit" value="master" type="radio"  />
                   <span>MasterCard</span>
                </label>
-               <label class="cardLabel">                                    
+               <label class="cardLabel">
                   <input name="credit" value="visa" type="radio"  />
                   <span>Visa</span>
                </label>
-            </fieldset>          
+            </fieldset>
 
             <label for="cardNumber">Credit Card Number*</label>
             <input name="cardNumber" id="cardNumber" required type="text"
@@ -110,14 +111,14 @@
                <option value="2024">2024</option>
                <option value="2025">2025</option>
                <option value="2026">2026</option>
-            </select>            
+            </select>
 
             <label for="cvc">CVC*</label>
             <input name="cvc" id="cvc" required pattern="^\d{3,4}$" type="text"/>
          </fieldset>
 
-         <p id="footnote">* - Required Item</p>        
-         <input type="submit" id="subButton" value="Submit Payment" />         
+         <p id="footnote">* - Required Item</p>
+         <input type="submit" id="subButton" value="Submit Payment" />
       </form>
 
    </section>

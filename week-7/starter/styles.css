@@ -19,6 +19,7 @@ body {
   background: #f5f7fb; /* Light blue background */
   color: #1f2937; /* Dark gray text */
 }
+
 /* Page header */
 header {
   background: #1f3c88; /* Dark blue header */
@@ -33,6 +34,7 @@ main {
   margin: 0 auto;
   padding: 24px 16px 40px;
 }
+
 /* Two-column layout: fixed-width sidebar + flexible main area */
 .app-grid {
   display: grid;
@@ -40,6 +42,7 @@ main {
   gap: 20px;
   align-items: start;
 }
+
 /* Sidebar sections spacing */
 .sidebar .setup-section,
 .sidebar .summary-section {
@@ -60,6 +63,7 @@ section {
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Subtle shadow for depth */
 }
+
 /* Section headings */
 h2 {
   margin-top: 0;
@@ -80,8 +84,10 @@ label {
   margin-bottom: 6px;
   font-weight: 600;
 }
-/* Text inputs and selects */
+
+/* Text inputs, email inputs, and selects */
 input[type="text"],
+input[type="email"],
 select {
   width: 100%;
   max-width: 320px;
@@ -92,14 +98,15 @@ select {
   background: #fff;
 }
 
-/* Question input styling - narrower for answer boxes */
+/* Question input styling - wider answer boxes */
 .question-input input[type="text"],
 .question-row input[type="text"] {
-  max-width: 120px; /* Limit width for answer inputs */
+  max-width: 240px; /* Limit width for answer inputs */
   width: 100%;
   padding: 8px 10px;
   font-size: 1rem;
 }
+
 /* Button styling */
 button {
   background: #1f3c88;
@@ -115,6 +122,7 @@ button {
 button:hover {
   background: #17306f; /* Darker blue on hover */
 }
+
 /* Error message display */
 .error-box {
   min-height: 22px;
@@ -128,6 +136,7 @@ button:hover {
 .results-section p {
   margin: 8px 0;
 }
+
 /* Quiz header with title */
 .quiz-header {
   display: flex;
@@ -157,34 +166,39 @@ button:hover {
   border: none;
   background: transparent;
   color: #1f3c88;
-} /* Questions container */
+}
+
+/* Questions container */
 .questions-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px; /* Space between question rows */
 }
 
-/* Question row wrapper */
+/* Question row wrapper - plain; the card styling lives on .question-content */
 .question-row {
-  padding: 0; /* Inner spacing handled by .question-content */
+  padding: 0;
   border: none;
   background: transparent;
 }
 
-/* Question card container - stacked layout: number, text, then input */
+/* Question card container - one line: number, question text, answer box */
 .question-content {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; /* Lets items wrap onto extra lines on very narrow screens */
+  gap: 16px;
   padding: 14px;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   background: #fff;
 }
 
-/* Question number label line (e.g. "Question 1") */
+/* Question number label (e.g. "Question 1") - fixed width keeps rows aligned */
 .question-number {
+  flex: 0 0 110px;
+  white-space: nowrap;
   font-weight: 700;
   font-size: 0.95rem;
   color: #1f3c88;
@@ -192,24 +206,24 @@ button:hover {
   letter-spacing: 0.03em;
 }
 
-/* Question text */
+/* Question text - fixed width so the answer boxes line up and sit closer */
 .question-text {
+  flex: 0 0 160px;
   font-weight: 600;
   color: #0f172a;
 }
 
-/* Question input area */
+/* Remove the extra label spacing so the text lines up with the answer box */
+.question-text label {
+  margin-bottom: 0;
+}
+
+/* Question input area - grows to fill the row, up to 240px */
 .question-input {
+  flex: 1 1 140px;
+  max-width: 240px;
   display: flex;
   align-items: center;
-  width: 100%;
-}
-/* Question row background */
-.question-row {
-  padding: 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background: #fafbfc;
 }
 
 /* Styling for incorrect answers */
@@ -222,7 +236,9 @@ button:hover {
 /* Hidden class for toggling section visibility */
 .hidden {
   display: none;
-} /* ==================================================
+}
+
+/* ==================================================
    RESPONSIVE DESIGN - Mobile and Tablet
    ================================================== */
 @media (max-width: 800px) {

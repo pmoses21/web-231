@@ -6,8 +6,8 @@
       Chapter 6
       Chapter Case
 
-      Author: 
-      Date:   
+      Author: Pat M
+      Date: 10/3/26
 
       Filename: js06a.html
    -->
@@ -15,6 +15,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Chapter 6 Case Problem: Product Order</title>
    <link rel="stylesheet" href="stylesa.css" />
+   <script src="js06a_txt.js" defer></script>
 </head>
 
 <body>
@@ -33,10 +34,10 @@
          Comes in 4-, 6-, and 8-quart models.
       </p>
    </section>
-   
+
    <section id="orderSection">
       <form id="orderForm" name="orderForm" method="get" action="ordersubmit.html">
-        
+
         <table id="orderTable">
            <caption>Product Order</caption>
            <tr>
@@ -46,7 +47,7 @@
                     <option value="89.95">4-Quart ($89.95)</option>
                     <option value="129.95" selected>6-Quart ($129.95)</option>
                     <option value="159.95">8-Quart ($159.95)</option>
-                 </select>   
+                 </select>
                  <input type="hidden" id="modelName" name="modelName" />
               </td>
               <td class="rightA">
@@ -57,14 +58,14 @@
                     <option value="4">4</option><option value="5">5</option><option value="6">6</option>
                     <option value="7">7</option><option value="8">8</option><option value="9">9</option>
                     <option value="10">10</option>
-                 </select>   
-              </td>                 
+                 </select>
+              </td>
               <td>
                  <input type="text" name="modelCost" id="modelCost" size="10" readonly />
               </td>
            </tr>
            <tr>
-              <td colspan="2"> 
+              <td colspan="2">
                  <fieldset>
                     <legend>Protection Plan</legend>
                     <input type="radio" id="plan_0" name="plan" value="0" checked /> <label for="plan_0">No protection plan ($0.00)</label><br>
@@ -77,7 +78,7 @@
               <td>
                  <input type="text" name="planCost" id="planCost" size="10" readonly />
               </td>
-           </tr>        
+           </tr>
            <tr>
               <td colspan="2" class="rightA">Subtotal</td>
               <td class="outcell">

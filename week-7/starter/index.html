@@ -2,7 +2,7 @@
      Timed Practice Quiz Application
      ==================================================
      This HTML document provides a timed math quiz interface.
-     - Participants enter their first name to start
+     - Participants enter their details to start
      - A countdown timer tracks remaining quiz time
      - Users answer 5 math problems
      - Results display showing total correct answers
@@ -40,8 +40,8 @@
             <h2>Quiz Setup</h2>
 
             <p class="section-note">
-              Enter your first name to begin. Your participant summary will
-              appear after the quiz starts.¬ç
+              Complete all fields to begin. Your participant summary will
+              appear after the quiz starts.
             </p>
 
             <!-- Data entry form for participant information -->
@@ -54,6 +54,54 @@
                   id="firstName"
                   name="firstName"
                   placeholder="Enter your first name"
+                  required
+                />
+              </div>
+
+              <!-- Last name input field -->
+              <div class="form-row">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter your last name"
+                  required
+                />
+              </div>
+
+              <!-- Email address input field -->
+              <div class="form-row">
+                <label for="emailAddress">Email Address</label>
+                <input
+                  type="email"
+                  id="emailAddress"
+                  name="emailAddress"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+
+              <!-- Course section dropdown -->
+              <div class="form-row">
+                <label for="courseSection">Course Section</label>
+                <select id="courseSection" name="courseSection" required>
+                  <option value="">Select a course section</option>
+                  <option value="WEB 231">WEB 231</option>
+                  <option value="WEB 330">WEB 330</option>
+                  <option value="WEB 340">WEB 340</option>
+                  <option value="WEB 425">WEB 425</option>
+                </select>
+              </div>
+
+              <!-- Quiz topic input field -->
+              <div class="form-row">
+                <label for="quizTopic">Quiz Topic</label>
+                <input
+                  type="text"
+                  id="quizTopic"
+                  name="quizTopic"
+                  placeholder="Enter the quiz topic"
                   required
                 />
               </div>
@@ -78,6 +126,22 @@
                 <strong>First Name:</strong>
                 <span id="summaryFirstName"></span>
               </p>
+              <p>
+                <strong>Last Name:</strong>
+                <span id="summaryLastName"></span>
+              </p>
+              <p>
+                <strong>Email Address:</strong>
+                <span id="summaryEmailAddress"></span>
+              </p>
+              <p>
+                <strong>Course Section:</strong>
+                <span id="summaryCourseSection"></span>
+              </p>
+              <p>
+                <strong>Quiz Topic:</strong>
+                <span id="summaryQuizTopic"></span>
+              </p>
             </div>
           </section>
         </aside>
@@ -101,7 +165,7 @@
               <div class="question-content">
                 <div class="question-number">Question 1</div>
                 <div class="question-text">
-                  <label for="question1">1) 5 + 2x = 25</label>
+                  <label for="question1">5 + 2x = 25</label>
                 </div>
                 <!-- User input for question 1 -->
                 <div class="question-input">
@@ -115,7 +179,7 @@
               <div class="question-content">
                 <div class="question-number">Question 2</div>
                 <div class="question-text">
-                  <label for="question2">2) 30 - 5x = 10</label>
+                  <label for="question2">30 - 5x = 10</label>
                 </div>
                 <div class="question-input">
                   <input id="question2" type="text" />
@@ -128,7 +192,7 @@
               <div class="question-content">
                 <div class="question-number">Question 3</div>
                 <div class="question-text">
-                  <label for="question3">3) 6 + 3x = -12</label>
+                  <label for="question3">6 + 3x = -12</label>
                 </div>
                 <div class="question-input">
                   <input id="question3" type="text" />
@@ -141,7 +205,7 @@
               <div class="question-content">
                 <div class="question-number">Question 4</div>
                 <div class="question-text">
-                  <label for="question4">4) 44 - 12x = -16</label>
+                  <label for="question4">44 - 12x = -16</label>
                 </div>
                 <div class="question-input">
                   <input id="question4" type="text" />
@@ -154,7 +218,7 @@
               <div class="question-content">
                 <div class="question-number">Question 5</div>
                 <div class="question-text">
-                  <label for="question5">5) 48 + 6x = 6</label>
+                  <label for="question5">48 + 6x = 6</label>
                 </div>
                 <div class="question-input">
                   <input id="question5" type="text" />
