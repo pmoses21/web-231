@@ -75,6 +75,13 @@ quizSetup.addEventListener("submit", function (event) {
     return;
   }
 
+  // Stop here if the email address is not in a valid format - quiz does not start
+  const emailError = getEmailError(emailAddress.value);
+  if (emailError !== "") {
+    errorBox.textContent = emailError;
+    return;
+  }
+
   // All fields are complete - copy participant details to summary and show quiz
   summaryFirstName.textContent = firstName.value.trim();
   summaryLastName.textContent = lastName.value.trim();
@@ -96,7 +103,8 @@ quizSetup.addEventListener("submit", function (event) {
 
 /**
  * Check every required setup field and return a list of the ones
- * that are empty or invalid. An empty list means the form is complete.
+ * that are empty. An empty list means every field has a value.
+ * (The email format itself is checked separately by getEmailError.)
  */
 function getMissingFields() {
   const missingFields = [];
@@ -109,8 +117,8 @@ function getMissingFields() {
     missingFields.push("Last Name");
   }
 
-  if (emailAddress.value.trim() === "" || !emailAddress.checkValidity()) {
-    missingFields.push("valid Email Address");
+  if (emailAddress.value.trim() === "") {
+    missingFields.push("Email Address");
   }
 
   if (courseSection.value === "") {
@@ -122,6 +130,33 @@ function getMissingFields() {
   }
 
   return missingFields;
+}
+
+/**
+ * Check the email address against the basic rules:
+ * - must contain an @ symbol
+ * - must not contain spaces
+ * - must end in .com or .net
+ * Returns a message describing the first problem found,
+ * or an empty string if the email is valid.
+ */
+function getEmailError(email) {
+  const emailValue = email.trim();
+
+  if (!emailValue.includes("@")) {
+    return "Email Address must contain an @ symbol.";
+  }
+
+  if (/\s/.test(emailValue)) {
+    return "Email Address must not contain spaces.";
+  }
+
+  const lowerEmail = emailValue.toLowerCase();
+  if (!lowerEmail.endsWith(".com") && !lowerEmail.endsWith(".net")) {
+    return "Email Address must end in .com or .net.";
+  }
+
+  return "";
 }
 
 // ============================================
